@@ -11,7 +11,7 @@ pipeline {
         }
         stage('Test') {
             steps {
-                echo 'Testing'
+                ./jenkins/test/mvn.sh mvn test
             }
         }
 	stage('Push') {
