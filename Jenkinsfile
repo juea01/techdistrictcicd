@@ -19,7 +19,7 @@ pipeline {
 	stage('Push') {
         	steps {
 		 sh '''
-                        ./jenkins/push/push.sh
+                     echo 'Running   ./jenkins/push/push.sh'
                    '''
 		}
         }
@@ -27,7 +27,7 @@ pipeline {
 			 steps {
                 sh '''
                         echo 'Running Deployscript on remote machine'
-                        ssh -i "/var/jenkins_home/prod/techDistrictWebServerKeyPair.pem" prod-user@ec2-54-206-69-220.ap-southeast-2.compute.amazonaws.com /home/prod-user/deployscript/deploy.sh
+                        echo 'Running ssh -i "/var/jenkins_home/prod/techDistrictWebServerKeyPair.pem" prod-user@ec2-54-206-69-220.ap-southeast-2.compute.amazonaws.com /home/prod-user/deployscript/deploy.sh '
                 '''
             }
         }
