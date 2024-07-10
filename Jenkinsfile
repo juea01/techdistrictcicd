@@ -7,7 +7,7 @@ pipeline {
 
     stages {
 
-	stage('Check Out' {
+	stage('Check Out') {
             steps {
 		  checkout([
                     $class: 'GitSCM', 
