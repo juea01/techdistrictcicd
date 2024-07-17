@@ -46,7 +46,7 @@ pipeline {
 			 steps {
                 sh '''
                         echo 'Running Deployscript on remote machine'
-                        ssh -i "/var/jenkins_home/prod/techDistrictWebServerKeyPair.pem" ec2-user@ec2-54-206-144-224.ap-southeast-2.compute.amazonaws.com /home/ec2-user/deployscript/deploy.sh 
+                        ssh -i "/var/jenkins_home/prod/techDistrictWebServerKeyPair.pem" ec2-user@ec2-54-206-144-224.ap-southeast-2.compute.amazonaws.com "nohup /home/ec2-user/deployscript/deploy.sh > /dev/null 2>&1 &"
                 '''
             }
         }
